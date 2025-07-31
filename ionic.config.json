@@ -1,0 +1,7 @@
+{
+  "name": "fithealth-plus",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
