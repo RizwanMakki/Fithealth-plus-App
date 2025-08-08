@@ -1,3 +1,89 @@
-<p>
-  signup works!
-</p>
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>Create Account</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="signup-content">
+
+    <div class="signup-container">
+      <div class="signup-card">
+        <div class="header-section">
+          <h1>Welcome</h1>
+          <p>Create your account to get started</p>
+        </div>
+
+        <form #signupForm="ngForm" (ngSubmit)="signup()" novalidate>
+
+          
+          <ion-item class="custom-input" lines="none">
+            <!-- <ion-icon name="person-outline" slot="start" class="input-icon"></ion-icon> -->
+            <ion-input name="name" placeholder="Full Name" type="text" required [(ngModel)]="name"></ion-input>
+          </ion-item>
+
+        
+          <ion-item class="custom-input" lines="none">
+            <!-- <ion-icon name="mail-outline" slot="start" class="input-icon"></ion-icon> -->
+            <ion-input name="email" placeholder="Email Address" type="email" required [(ngModel)]="email"></ion-input>
+          </ion-item>
+
+         
+          <ion-item class="custom-input" lines="none">
+            <!-- <ion-icon name="lock-closed-outline" slot="start" class="input-icon"></ion-icon> -->
+            <ion-input [type]="showPassword ? 'text' : 'password'" name="password" placeholder="Password" required
+              minlength="6" [(ngModel)]="password"></ion-input>
+            <ion-button fill="clear" slot="end" class="eye-button" (click)="showPassword = !showPassword" type="button">
+              <!-- <ion-icon [name]="showPassword ? 'eye-off-outline' : 'eye-outline'"></ion-icon> -->
+            </ion-button>
+          </ion-item>
+
+        
+          <ion-item class="custom-input" lines="none">
+            <!-- <ion-icon name="lock-closed-outline" slot="start" class="input-icon"></ion-icon> -->
+            <ion-input [type]="showConfirmPassword ? 'text' : 'password'" name="confirmPassword"
+              placeholder="Confirm Password" required [(ngModel)]="confirmPassword"></ion-input>
+            <ion-button fill="clear" slot="end" class="eye-button" (click)="showConfirmPassword = !showConfirmPassword"
+              type="button">
+              <!-- <ion-icon [name]="showConfirmPassword ? 'eye-off-outline' : 'eye-outline'"></ion-icon> -->
+            </ion-button>
+          </ion-item>
+
+         
+          <div class="terms-container">
+            <ion-checkbox name="acceptTerms" class="custom-checkbox" [(ngModel)]="agreeTerms"></ion-checkbox>
+            <label class="terms-label">
+              I agree to the <span class="terms-link">Terms and Conditions</span>
+            </label>
+          </div>
+
+          <ion-button expand="block" type="submit" class="create-button" [disabled]="!agreeTerms">
+            <!-- <ion-icon name="person-add-outline" slot="start"></ion-icon> -->
+            Create Account
+          </ion-button>
+
+       
+          <div class="divider-container">
+            <div class="divider-line"></div>
+            <span class="divider-text">OR</span>
+            <div class="divider-line"></div>
+          </div>
+
+          
+          <ion-button expand="block" fill="outline" class="google-button">
+            <!-- <ion-icon name="logo-google" slot="start"></ion-icon> -->
+            Continue with Google
+          </ion-button>
+
+          
+          <div class="signin-container">
+            <span>Already have an account? </span>
+            <ion-button fill="clear" class="signin-link" [routerLink]="['/login']">
+              Sign In
+            </ion-button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  
+</ion-content>

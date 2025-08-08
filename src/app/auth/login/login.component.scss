@@ -1,0 +1,253 @@
+.login-content {
+  --background: none;
+  background: linear-gradient(135deg, #2c003e 0%, #4b003e 100%);
+  --padding-start: 0;
+  --padding-end: 0;
+  --padding-top: 0;
+  --padding-bottom: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.login-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 40px 32px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.4),
+    0 10px 10px -5px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  max-height: 90vh;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 3px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #6a11cb, #bc4e9c);
+    border-radius: 3px;
+  }
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 32px;
+
+  h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    background: linear-gradient(135deg, #8e2de2, #bc4e9c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  p {
+    font-size: 16px;
+    color: #cbd5e1;
+    margin: 0;
+    font-weight: 400;
+  }
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-item {
+  --background: rgba(255, 255, 255, 0.05);
+  --border-radius: 12px;
+  --border-width: 1px;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --min-height: 56px;
+  margin: 0;
+  transition: all 0.3s ease;
+
+  &:hover {
+    --border-color: rgba(255, 255, 255, 0.2);
+    --background: rgba(255, 255, 255, 0.08);
+  }
+
+  &.item-has-focus {
+    --border-color: #bc4e9c;
+    --background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 0 2px rgba(188, 78, 156, 0.2);
+  }
+
+  &.error {
+    --border-color: #ef4444;
+    --background: rgba(254, 242, 242, 0.08);
+  }
+}
+
+.form-input {
+  --color: #f1f5f9;
+  --placeholder-color: #94a3b8;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.input-icon {
+  color: #94a3b8;
+  font-size: 20px;
+  margin-right: 12px;
+}
+
+.password-toggle {
+  --color: #94a3b8;
+
+  &:hover {
+    --color: #ec4899;
+  }
+}
+
+.form-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 8px 0;
+
+  .remember-checkbox {
+    --size: 18px;
+    --checkbox-background-checked: #bc4e9c;
+    --border-color-checked: #bc4e9c;
+    --checkmark-color: white;
+    margin-right: 8px;
+  }
+
+  .remember-label {
+    font-size: 14px;
+    color: #cbd5e1;
+    font-weight: 400;
+    flex: 1;
+    cursor: pointer;
+  }
+
+  .forgot-password {
+    font-size: 14px;
+    color: #ec4899;
+    font-weight: 500;
+
+    &:hover {
+      color: #f472b6;
+      text-decoration: underline;
+    }
+  }
+}
+
+.signin-button {
+  --background: linear-gradient(135deg, #6a11cb, #bc4e9c);
+  --color: white;
+  --border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 16px 0 8px 0;
+  text-transform: none;
+
+  &:hover:not([disabled]) {
+    --background: linear-gradient(135deg, #7b1fa2, #e91e63);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px rgba(188, 78, 156, 0.3);
+  }
+
+  &[disabled] {
+    --background: #4b5563;
+    --color: #9ca3af;
+  }
+
+  ion-spinner {
+    margin-right: 8px;
+  }
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 24px 0;
+
+  &::before,
+  &::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  span {
+    padding: 0 16px;
+    font-size: 14px;
+    color: #cbd5e1;
+  }
+}
+
+.google-button {
+  --background: transparent;
+  --color: #f1f5f9;
+  --border-color: rgba(255, 255, 255, 0.2);
+  --border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 24px;
+
+  &:hover {
+    --border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+}
+.custom-header {
+  --background: none !important; // override Ionic default
+  background: linear-gradient(135deg, #2c003e, #4b003e) !important;
+  color: #ffffff;
+
+  ion-title {
+    text-align: center;
+    font-weight: bold;
+    color: white;
+  }
+
+  // Shadow DOM workaround: target native element too
+  ion-toolbar {
+    --background: none !important;
+    background: transparent !important;
+  }
+}
+
+.signup-link {
+  text-align: center;
+  font-size: 14px;
+  color: #cbd5e1;
+
+  a {
+    color: #ec4899;
+    font-weight: 600;
+
+    &:hover {
+      color: #f472b6;
+      text-decoration: underline;
+    }
+  }
+}

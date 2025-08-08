@@ -35,3 +35,105 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import '@ionic/angular/css/palettes/dark.system.css';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+// Custom CSS variables for consistent theming
+:root {
+  --ion-color-primary: #6366f1;
+  --ion-color-primary-rgb: 99, 102, 241;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #4f46e5;
+  --ion-color-primary-tint: #7c3aed;
+
+  --ion-color-secondary: #8b5cf6;
+  --ion-color-secondary-rgb: 139, 92, 246;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #7c3aed;
+  --ion-color-secondary-tint: #a855f7;
+
+  --ion-color-tertiary: #ec4899;
+  --ion-color-tertiary-rgb: 236, 72, 153;
+  --ion-color-tertiary-contrast: #ffffff;
+  --ion-color-tertiary-contrast-rgb: 255, 255, 255;
+  --ion-color-tertiary-shade: #db2777;
+  --ion-color-tertiary-tint: #f472b6;
+
+  /* Primary gradient background */
+  --background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+  
+  /* Glassmorphism colors */
+  --glass-bg: rgba(255, 255, 255, 0.95);
+  --glass-bg-dark: rgba(30, 27, 75, 0.9);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-border-dark: rgba(139, 92, 246, 0.3);
+  
+  /* Text colors */
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --text-primary-dark: #f9fafb;
+  --text-secondary-dark: #d1d5db;
+  
+  /* Shadow colors */
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-medium: rgba(0, 0, 0, 0.15);
+  --shadow-strong: rgba(99, 102, 241, 0.3);
+  
+  /* Spacing system (8px base) */
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 32px;
+  --spacing-xl: 48px;
+  --spacing-2xl: 64px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: linear-gradient(135deg, #1e1b4b 0%, #581c87 50%, #be185d 100%);
+    --glass-bg: var(--glass-bg-dark);
+    --glass-border: var(--glass-border-dark);
+    --text-primary: var(--text-primary-dark);
+    --text-secondary: var(--text-secondary-dark);
+  }
+}
+
+// Smooth transitions for all interactive elements
+ion-button, ion-item, ion-checkbox {
+  transition: all 0.3s ease;
+}
+
+// Custom scrollbar for web
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(241, 245, 249, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+}
+
+// Prevent body scroll on mobile
+html, body {
+  overflow: hidden;
+  height: 100%;
+}
+
+ion-app {
+  height: 100%;
+}

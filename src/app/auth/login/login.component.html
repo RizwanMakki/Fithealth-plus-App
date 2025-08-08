@@ -1,3 +1,46 @@
-<p>
-  login works!
-</p>
+<ion-header translucent="true">
+  <ion-toolbar class="custom-header">
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="login-content">
+  <div class="login-container">
+    <div class="login-card">
+      <div class="login-header">
+        <h1>Welcome Back</h1>
+        <p>Sign in to your account</p>
+      </div>
+
+      <form #signupForm="ngForm" (ngSubmit)="login()" class="login-form" novalidate>
+        
+        <ion-item class="form-item">
+          <ion-input name="email" type="email" [(ngModel)]="email" placeholder="email" class="form-input"></ion-input>
+        </ion-item>
+
+        <ion-item class="form-item">
+          <ion-input name="password" [(ngModel)]="password" placeholder="Password" class="form-input"></ion-input>
+          <ion-button fill="clear" slot="end" class="password-toggle" type="button"></ion-button>
+        </ion-item>
+
+        <div class="form-options">
+          <ion-checkbox class="remember-checkbox"></ion-checkbox>
+          <label class="remember-label">Remember me</label>
+          <a href="#" class="forgot-password">Forgot Password?</a>
+        </div>
+
+        <ion-button expand="block" type="submit" class="signin-button">
+          <ion-spinner name="crescent"></ion-spinner>
+          <span>Sign In</span>
+        </ion-button>
+
+        <div class="divider">
+          <span>or</span>
+        </div>
+
+        <ion-button expand="block" fill="outline" class="google-button">
+          Continue with Google
+        </ion-button>
+
+        <div class="signup-link">
+          <span>
